@@ -1,7 +1,24 @@
 {
-  "name": "unocss-preset-css",
   "module": "index.ts",
+  "name": "@olets/unocss-preset-css",
   "type": "module",
+  "version": "1.0.0-alpha.1",
+  "description": "The 'css-in-the-class-attribute' preset for UnoCSS",
+  "author": "Henry Bley-Vroman <olets@olets.dev>",
+  "license": "SEE LICENSE IN LICENSE",
+  "homepage": "https://github.com/olets/unocss-preset-css/tree/main/packages/preset-mini#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/olets/unocss-preset-css"
+  },
+  "bugs": {
+    "url": "https://github.com/olets/unocss-preset-css/issues"
+  },
+  "keywords": [
+    "css",
+    "unocss",
+    "unocss-preset"
+  ],
   "devDependencies": {
     "@types/bun": "latest"
   },
