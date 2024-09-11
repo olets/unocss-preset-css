@@ -1,9 +1,7 @@
-import type {
-  Postprocessor,
-  PresetOptions,
-} from "@unocss/core";
+import type { PresetOptions } from "@unocss/core";
 import { definePreset } from "@unocss/core";
 import { extractorAttributify } from "@unocss/preset-attributify";
+import { VarPrefixPostprocessor } from "@unocss/preset-mini";
 import { rules } from "./rules";
 import { variants } from "./variants";
 
@@ -41,20 +39,3 @@ export const presetCSS = definePreset((options: PresetCSSOptions = {}) => {
 });
 
 export default presetCSS;
-
-/**
- * H/t https://github.com/unocss/unocss/blob/243623ddb7decd7002e4110ef3674e1feeef6297/packages/preset-mini/src/index.ts#L119-L132
- */
-export function VarPrefixPostprocessor(
-  prefix: string
-): Postprocessor | undefined {
-  if (prefix !== "un-") {
-    return (obj) => {
-      obj.entries.forEach((i) => {
-        i[0] = i[0].replace(/^--un-/, `--${prefix}`);
-        if (typeof i[1] === "string")
-          i[1] = i[1].replace(/var\(--un-/g, `var(--${prefix}`);
-      });
-    };
-  }
-}
