@@ -1,18 +1,11 @@
 import type {
   Postprocessor,
-  Preflight,
-  PreflightContext,
   PresetOptions,
 } from "@unocss/core";
 import { definePreset } from "@unocss/core";
 import { extractorAttributify } from "@unocss/preset-attributify";
 import { rules } from "./rules";
-import { theme, type Theme } from "./theme";
 import { variants } from "./variants";
-import { preflights } from "./preflights";
-
-export { preflights } from "./preflights";
-export { theme } from "./theme";
 
 export interface PresetCSSOptions extends PresetOptions {
   /**
@@ -40,14 +33,9 @@ export const presetCSS = definePreset((options: PresetCSSOptions = {}) => {
   return {
     extractors: [extractorAttributify()],
     name: "@olets/unocss-preset-css",
-    theme,
-    rules,
     prefix: options.prefix,
-    // @TODO figure out a way to make the built preset be a Factory without this preflight stuff. Is it dependent on using the Theme interface? Would be nice to remove most of what we added in the commit which first added this comment.
-    preflights: options.preflight
-      ? normalizePreflights(preflights, options.variablePrefix)
-      : [],
     postprocess: VarPrefixPostprocessor(options.variablePrefix),
+    rules,
     variants: variants(),
   };
 });
@@ -69,21 +57,4 @@ export function VarPrefixPostprocessor(
       });
     };
   }
-}
-
-export function normalizePreflights<Theme extends object>(
-  preflights: Preflight<Theme>[],
-  variablePrefix: string
-) {
-  if (variablePrefix !== "un-") {
-    return preflights.map((p) => ({
-      ...p,
-      getCSS: (() => async (ctx: PreflightContext<Theme>) => {
-        const css = await p.getCSS(ctx);
-        if (css) return css.replace(/--un-/g, `--${variablePrefix}`);
-      })(),
-    }));
-  }
-
-  return preflights;
 }
