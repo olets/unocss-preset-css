@@ -1,5 +1,5 @@
 import type { Rule } from "@unocss/core";
 
-import { css } from "./css";
+import { style } from "./style";
 
-export const rules: Rule[] = [css].flat(1);
+export const rules: Rule[] = [style].flat(1);

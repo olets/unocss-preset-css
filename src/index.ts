@@ -7,12 +7,11 @@ import type {
 import { definePreset } from "@unocss/core";
 import { rules } from "./rules";
 import { theme, type Theme } from "./theme";
+import { variants } from "./variants";
 import { preflights } from "./preflights";
 
 export { preflights } from "./preflights";
 export { theme } from "./theme";
-
-export { rules };
 
 export interface PresetCSSOptions extends PresetOptions {
   /**
@@ -47,6 +46,7 @@ export const presetCSS = definePreset((options: PresetCSSOptions = {}) => {
       ? normalizePreflights(preflights, options.variablePrefix)
       : [],
     postprocess: VarPrefixPostprocessor(options.variablePrefix),
+    variants: variants(),
   };
 });
 
