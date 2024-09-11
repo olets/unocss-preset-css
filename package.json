@@ -35,12 +35,14 @@
   ],
   "scripts": {
     "build": "unbuild",
-    "stub": "unbuild --stub"
+    "stub": "unbuild --stub",
+    "test": "vitest"
   },
   "devDependencies": {
     "@types/bun": "latest",
     "@unocss/preset-attributify": "^0.62.3",
-    "unbuild": "^2.0.0"
+    "unbuild": "^2.0.0",
+    "vitest": "^2.0.5"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
