@@ -1,7 +1,7 @@
 {
   "name": "@olets/unocss-preset-css",
   "type": "module",
-  "version": "1.0.0-alpha.3",
+  "version": "1.0.0-alpha.4",
   "description": "The 'css-in-the-class-attribute' preset for UnoCSS",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
