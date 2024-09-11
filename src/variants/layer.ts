@@ -6,6 +6,7 @@ import { toLayer } from "../utilities/variants";
  * class="@layer_utilities{color:red}"
  *
  * NB:
+ * - layer name cannot contain the characters `@`, `{`, or `[`
  * - underscores (`_`) are replaced with spaces (` `)
  *
  * @returns VariantObject

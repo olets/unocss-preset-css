@@ -6,6 +6,8 @@ import { toParent } from "../utilities/variants";
  * class="@media(width>=768px){color:red}"
  *
  * NB:
+ * - for `layer` at-rules, see the `layer` variant
+ * - at-rule cannot contain the characters `@`, `{`, or `[`
  * - underscores (`_`) are replaced with spaces (` `)
  *
  * @returns VariantObject

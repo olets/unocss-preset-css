@@ -8,6 +8,7 @@ import { toSelector } from "../utilities/variants";
  * class="::after{content:Hello_World}"
  *
  * NB:
+ * - selector cannot contain the characters `@`, `{`, or `[`
  * - underscores (`_`) are replaced with spaces (` `)
  *
  * @returns VariantObject
