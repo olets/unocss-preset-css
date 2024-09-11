@@ -1,13 +1,5 @@
 import type { VariantObject } from "@unocss/core";
-
-function toParent(
-  rawParent: string,
-  inputParent: string | undefined
-): string | undefined {
-  const parent = rawParent.replaceAll("_", " ");
-
-  return `${inputParent ? `${inputParent} $$ ` : ""}${parent}`;
-}
+import { toParent } from "../utilities/variants";
 
 /**
  * at-rules

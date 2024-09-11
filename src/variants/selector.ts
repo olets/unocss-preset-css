@@ -1,8 +1,5 @@
 import type { VariantObject } from "@unocss/core";
-
-function toSelector(rawSelector: string, inputSelector: string): string {
-  return rawSelector.replaceAll("_", " ").replaceAll("&", inputSelector);
-}
+import { toSelector } from "../utilities/variants";
 
 /**
  * Modify the selector:

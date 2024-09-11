@@ -1,9 +1,15 @@
 import type { VariantObject } from "@unocss/core";
+import { toLayer } from "../utilities/variants";
 
-function toLayer(rawLayer: string): string | undefined {
-  return rawLayer.replaceAll("_", "-");
-}
-
+/**
+ * Layer:
+ * class="@layer_utilities{color:red}"
+ *
+ * NB:
+ * - underscores (`_`) are replaced with spaces (` `)
+ *
+ * @returns VariantObject
+ */
 export function variantLayer(): VariantObject {
   return {
     name: "layer",
