@@ -13,28 +13,26 @@ import { toParent } from "../utilities/variants";
  *
  * @returns VariantObject
  */
-export function variantAppendedSelector(): VariantObject {
-  return {
-    name: "appended-selector",
-    match(matcher) {
-      const matched = matcher.match(/^(:{1,2}[^@{[]+)(.+)$/);
+export const variantAppendedSelector: VariantObject = {
+  name: "appended-selector",
+  match(matcher) {
+    const matched = matcher.match(/^(:{1,2}[^@{[]+)(.+)$/);
 
-      if (!matched) {
-        return;
-      }
+    if (!matched) {
+      return;
+    }
 
-      const [, selector, rest] = matched;
+    const [, selector, rest] = matched;
 
-      return {
-        matcher: rest,
-        handle: (input, next) =>
-          next({
-            ...input,
-            parent: toParent(input.selector, input.parent),
-            selector,
-          }),
-      };
-    },
-    autocomplete: ":",
-  };
-}
+    return {
+      matcher: rest,
+      handle: (input, next) =>
+        next({
+          ...input,
+          parent: toParent(input.selector, input.parent),
+          selector,
+        }),
+    };
+  },
+  autocomplete: ":",
+};

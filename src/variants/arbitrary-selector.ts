@@ -14,39 +14,37 @@ import { toParent } from "../utilities/variants";
  *
  * @returns VariantObject
  */
-export function variantArbitrarySelector(): VariantObject {
-  return {
-    name: "arbitrary-selector",
-    match(matcher) {
-      const matched = matcher.match(/^\[(.+)\](.+)$/);
+export const variantArbitrarySelector: VariantObject = {
+  name: "arbitrary-selector",
+  match(matcher) {
+    const matched = matcher.match(/^\[(.+)\](.+)$/);
 
-      if (!matched) {
-        return;
-      }
+    if (!matched) {
+      return;
+    }
 
-      const [, selector, rest] = matched;
+    const [, selector, rest] = matched;
 
-      if (selector.includes("&")) {
-        return {
-          matcher: rest,
-          handle: (input, next) =>
-            next({
-              ...input,
-              parent: toParent(input.selector, input.parent),
-              selector: selector,
-            }),
-        };
-      }
-
+    if (selector.includes("&")) {
       return {
         matcher: rest,
         handle: (input, next) =>
           next({
             ...input,
+            parent: toParent(input.selector, input.parent),
             selector: selector,
           }),
       };
-    },
-    autocomplete: "[",
-  };
-}
+    }
+
+    return {
+      matcher: rest,
+      handle: (input, next) =>
+        next({
+          ...input,
+          selector: selector,
+        }),
+    };
+  },
+  autocomplete: "[",
+};

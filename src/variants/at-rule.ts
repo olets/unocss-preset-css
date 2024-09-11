@@ -12,28 +12,26 @@ import { toParent } from "../utilities/variants";
  *
  * @returns VariantObject
  */
-export function variantAtRule(): VariantObject {
-  return {
-    name: "at-rule",
-    match(matcher) {
-      const matched = matcher.match(/^(@(?!layer)[^@{[]*)(.+)$/);
+export const variantAtRule: VariantObject = {
+  name: "at-rule",
+  match(matcher) {
+    const matched = matcher.match(/^(@(?!layer)[^@{[]*)(.+)$/);
 
-      if (!matched) {
-        return;
-      }
+    if (!matched) {
+      return;
+    }
 
-      const [, rawAtRule, rest] = matched;
+    const [, rawAtRule, rest] = matched;
 
-      return {
-        matcher: rest,
-        handle: (input, next) => {
-          return next({
-            ...input,
-            parent: toParent(rawAtRule.replaceAll("_", " "), input.parent),
-          });
-        },
-      };
-    },
-    autocomplete: "@",
-  };
-}
+    return {
+      matcher: rest,
+      handle: (input, next) => {
+        return next({
+          ...input,
+          parent: toParent(rawAtRule.replaceAll("_", " "), input.parent),
+        });
+      },
+    };
+  },
+  autocomplete: "@",
+};

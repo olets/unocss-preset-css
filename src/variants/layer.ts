@@ -9,23 +9,21 @@ import type { VariantObject } from "@unocss/core";
  *
  * @returns VariantObject
  */
-export function variantLayer(): VariantObject {
-  return {
-    name: "layer",
-    match(matcher) {
-      const matched = matcher.match(/^@layer_([^@{[]+)(.+)$/);
+export const variantLayer: VariantObject = {
+  name: "layer",
+  match(matcher) {
+    const matched = matcher.match(/^@layer_([^@{[]+)(.+)$/);
 
-      if (!matched) {
-        return;
-      }
+    if (!matched) {
+      return;
+    }
 
-      const [, rawLayer, rest] = matched;
+    const [, rawLayer, rest] = matched;
 
-      return {
-        matcher: rest,
-        layer: rawLayer,
-      };
-    },
-    autocomplete: "@layer_",
-  };
-}
+    return {
+      matcher: rest,
+      layer: rawLayer,
+    };
+  },
+  autocomplete: "@layer_",
+};
