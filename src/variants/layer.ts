@@ -1,5 +1,4 @@
 import type { VariantObject } from "@unocss/core";
-import { toLayer } from "../utilities/variants";
 
 /**
  * Layer:
@@ -7,7 +6,6 @@ import { toLayer } from "../utilities/variants";
  *
  * NB:
  * - layer name cannot contain the characters `@`, `{`, or `[`
- * - underscores (`_`) are replaced with spaces (` `)
  *
  * @returns VariantObject
  */
@@ -25,7 +23,7 @@ export function variantLayer(): VariantObject {
 
       return {
         matcher: rest,
-        layer: toLayer(rawLayer),
+        layer: rawLayer,
       };
     },
     autocomplete: "@layer_",

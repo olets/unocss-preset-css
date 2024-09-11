@@ -1,7 +1,3 @@
-export function toLayer(rawLayer: string): string | undefined {
-  return rawLayer.replaceAll("_", "-");
-}
-
 export function toParent(
   rawParent: string,
   inputParent: string | undefined
