@@ -29,7 +29,7 @@ export function variantAtRule(): VariantObject {
         handle: (input, next) => {
           return next({
             ...input,
-            parent: toParent(rawAtRule, input.parent),
+            parent: toParent(rawAtRule.replaceAll("_", " "), input.parent),
           });
         },
       };

@@ -1,5 +1,5 @@
 import type { VariantObject } from "@unocss/core";
-import { toSelector } from "../utilities/variants";
+import { toParent } from "../utilities/variants";
 
 /**
  * Modify the selector:
@@ -24,16 +24,27 @@ export function variantArbitrarySelector(): VariantObject {
         return;
       }
 
-      const [, rawSelector, rest] = matched;
+      const [, selector, rest] = matched;
+
+      if (selector.includes("&")) {
+        return {
+          matcher: rest,
+          handle: (input, next) =>
+            next({
+              ...input,
+              parent: toParent(input.selector, input.parent),
+              selector: selector,
+            }),
+        };
+      }
 
       return {
         matcher: rest,
-        handle: (input, next) => {
-          return next({
+        handle: (input, next) =>
+          next({
             ...input,
-            selector: toSelector(rawSelector, input.selector),
-          });
-        },
+            selector: selector,
+          }),
       };
     },
     autocomplete: "[",

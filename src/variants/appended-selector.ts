@@ -1,5 +1,5 @@
 import type { VariantObject } from "@unocss/core";
-import { toSelector } from "../utilities/variants";
+import { toParent } from "../utilities/variants";
 
 /**
  * Append to the selector,
@@ -23,16 +23,16 @@ export function variantAppendedSelector(): VariantObject {
         return;
       }
 
-      const [, rawSelector, rest] = matched;
+      const [, selector, rest] = matched;
 
       return {
         matcher: rest,
-        handle: (input, next) => {
-          return next({
+        handle: (input, next) =>
+          next({
             ...input,
-            selector: toSelector(`&${rawSelector}`, input.selector),
-          });
-        },
+            parent: toParent(input.selector, input.parent),
+            selector,
+          }),
       };
     },
     autocomplete: ":",
