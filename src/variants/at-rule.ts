@@ -15,20 +15,23 @@ import { toParent } from "../utilities/variants";
 export const variantAtRule: VariantObject = {
   name: "at-rule",
   match(matcher) {
-    const matched = matcher.match(/^(@(?!layer)[^@{[]*)(.+)$/);
+    const matchArray = matcher.match(
+      /^(?<atRule>@(?!layer)[^@{[]*)(?<rest>.+)$/
+    );
 
-    if (!matched) {
+    if (matchArray === null) {
       return;
     }
 
-    const [, rawAtRule, rest] = matched;
+    const atRule = matchArray?.groups?.atRule || "";
+    const rest = matchArray?.groups?.rest || "";
 
     return {
       matcher: rest,
       handle: (input, next) => {
         return next({
           ...input,
-          parent: toParent(rawAtRule.replaceAll("_", " "), input.parent),
+          parent: toParent(atRule.replaceAll("_", " "), input.parent),
         });
       },
     };

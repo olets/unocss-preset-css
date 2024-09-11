@@ -12,17 +12,18 @@ import type { VariantObject } from "@unocss/core";
 export const variantLayer: VariantObject = {
   name: "layer",
   match(matcher) {
-    const matched = matcher.match(/^@layer_([^@{[]+)(.+)$/);
+    const matchArray = matcher.match(/^@layer_(?<name>[^@{[]+)(?<rest>.+)$/);
 
-    if (!matched) {
+    if (matchArray === null) {
       return;
     }
 
-    const [, rawLayer, rest] = matched;
+    const name = matchArray?.groups?.name || "";
+    const rest = matchArray?.groups?.rest || "";
 
     return {
       matcher: rest,
-      layer: rawLayer,
+      layer: name,
     };
   },
   autocomplete: "@layer_",

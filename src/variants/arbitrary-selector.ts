@@ -1,4 +1,4 @@
-import type { VariantObject } from "@unocss/core";
+import type { VariantHandler, VariantObject } from "@unocss/core";
 import { toParent } from "../utilities/variants";
 
 /**
@@ -17,13 +17,14 @@ import { toParent } from "../utilities/variants";
 export const variantArbitrarySelector: VariantObject = {
   name: "arbitrary-selector",
   match(matcher) {
-    const matched = matcher.match(/^\[(.+)\](.+)$/);
+    const matchArray = matcher.match(/^\[(?<selector>.+)\](?<rest>.+)$/);
 
-    if (!matched) {
+    if (matchArray === null) {
       return;
     }
 
-    const [, selector, rest] = matched;
+    const selector = matchArray?.groups?.selector || "";
+    const rest = matchArray?.groups?.rest || "";
 
     if (selector.includes("&")) {
       return {
@@ -32,7 +33,7 @@ export const variantArbitrarySelector: VariantObject = {
           next({
             ...input,
             parent: toParent(input.selector, input.parent),
-            selector: selector,
+            selector,
           }),
       };
     }
@@ -42,7 +43,7 @@ export const variantArbitrarySelector: VariantObject = {
       handle: (input, next) =>
         next({
           ...input,
-          selector: selector,
+          selector,
         }),
     };
   },

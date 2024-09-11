@@ -16,13 +16,14 @@ import { toParent } from "../utilities/variants";
 export const variantAppendedSelector: VariantObject = {
   name: "appended-selector",
   match(matcher) {
-    const matched = matcher.match(/^(:{1,2}[^@{[]+)(.+)$/);
+    const matchArray = matcher.match(/^(?<selector>:{1,2}[^@{[]+)(?<rest>.+)$/);
 
-    if (!matched) {
+    if (!matchArray) {
       return;
     }
 
-    const [, selector, rest] = matched;
+    const selector = matchArray?.groups?.selector || "";
+    const rest = matchArray?.groups?.rest || "";
 
     return {
       matcher: rest,

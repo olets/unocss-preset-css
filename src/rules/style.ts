@@ -17,7 +17,14 @@ import type { Rule } from "@unocss/core";
  */
 
 export const style: Rule[] = [
-  [/^\{(.+)\}$/, ([, rawStyles]) => toStyles(rawStyles)],
+  [
+    /^\{(?<rawStyles>.+)\}$/,
+    (matchArray) => {
+      const rawStyles = matchArray?.groups?.rawStyles || "";
+
+      return toStyles(rawStyles);
+    },
+  ],
 ];
 
 function toStyles(rawStyles: string): Record<string, string> {
