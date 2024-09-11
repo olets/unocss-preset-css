@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@types/bun": "latest",
+    "@unocss/preset-attributify": "^0.62.3",
     "unbuild": "^2.0.0"
   },
   "peerDependencies": {

@@ -5,6 +5,7 @@ import type {
   PresetOptions,
 } from "@unocss/core";
 import { definePreset } from "@unocss/core";
+import { extractorAttributify } from "@unocss/preset-attributify";
 import { rules } from "./rules";
 import { theme, type Theme } from "./theme";
 import { variants } from "./variants";
@@ -37,6 +38,7 @@ export const presetCSS = definePreset((options: PresetCSSOptions = {}) => {
   options.preflight = options.preflight ?? true;
   options.variablePrefix = options.variablePrefix ?? "un-";
   return {
+    extractors: [extractorAttributify()],
     name: "@olets/unocss-preset-css",
     theme,
     rules,
