@@ -2,23 +2,21 @@ import type { VariantObject } from "@unocss/core";
 import { toSelector } from "../utilities/variants";
 
 /**
- * Modify the selector:
- * class="[:root]{--color:red}"
- * class="[body:has(&[open])]{--color:green}"
- * class="[&::before]{content:\\2022}"
- * class="[.x>&_.y]{color:red}"
- * class="[details[open]_&]{color:red}"
+ * Append to the selector,
+ * a shorthand for aribtrary selectors of the pattern `[&:<selector>]`
+ * class=":hover{color:red}"
+ * class="::after{content:Hello_World}"
  *
  * NB:
  * - underscores (`_`) are replaced with spaces (` `)
  *
  * @returns VariantObject
  */
-export function variantSelector(): VariantObject {
+export function variantAppendedSelector(): VariantObject {
   return {
-    name: "selector",
+    name: "appended-selector",
     match(matcher) {
-      const matched = matcher.match(/^\[(.+)\](.+)$/);
+      const matched = matcher.match(/^(:{1,2}[^@{[]+)(.+)$/);
 
       if (!matched) {
         return;
@@ -31,11 +29,11 @@ export function variantSelector(): VariantObject {
         handle: (input, next) => {
           return next({
             ...input,
-            selector: toSelector(rawSelector, input.selector),
+            selector: toSelector(`&${rawSelector}`, input.selector),
           });
         },
       };
     },
-    autocomplete: "[",
+    autocomplete: ":",
   };
 }
