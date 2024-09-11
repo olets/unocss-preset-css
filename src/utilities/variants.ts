@@ -1,12 +1,15 @@
 export function toParent(
-  rawParent: string,
-  inputParent: string | undefined
+  newParent: string,
+  existingParent: string | undefined
 ): string | undefined {
-  const parent = rawParent.replaceAll("_", " ");
+  const parent = newParent.replaceAll("_", " ");
 
-  return `${inputParent ? `${inputParent} $$ ` : ""}${parent}`;
+  return `${existingParent ? `${existingParent} $$ ` : ""}${parent}`;
 }
 
-export function toSelector(rawSelector: string, inputSelector: string): string {
-  return rawSelector.replaceAll("_", " ").replaceAll("&", inputSelector);
+export function toSelector(
+  newSelector: string,
+  existingSelector: string
+): string {
+  return newSelector.replaceAll("_", " ").replaceAll("&", existingSelector);
 }
