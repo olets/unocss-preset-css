@@ -1,4 +1,4 @@
-import type { VariantHandler, VariantObject } from "@unocss/core";
+import type { VariantObject } from "@unocss/core";
 import { toParent } from "#utilities/variants.ts";
 
 /**
