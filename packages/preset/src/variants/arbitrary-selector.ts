@@ -11,8 +11,6 @@ import { toParent } from "../utilities/variants";
  *
  * NB:
  * - underscores (`_`) are replaced with spaces (` `)
- *
- * @returns VariantObject
  */
 export const variantArbitrarySelector: VariantObject = {
   name: "arbitrary-selector",

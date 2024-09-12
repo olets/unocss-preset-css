@@ -10,8 +10,6 @@ import { toParent } from "../utilities/variants";
  * NB:
  * - selector cannot contain the characters `@`, `{`, or `[`
  * - underscores (`_`) are replaced with spaces (` `)
- *
- * @returns VariantObject
  */
 export const variantAppendedSelector: VariantObject = {
   name: "appended-selector",

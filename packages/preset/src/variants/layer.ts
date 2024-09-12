@@ -6,8 +6,6 @@ import type { VariantObject } from "@unocss/core";
  *
  * NB:
  * - layer name cannot contain the characters `@`, `{`, or `[`
- *
- * @returns VariantObject
  */
 export const variantLayer: VariantObject = {
   name: "layer",

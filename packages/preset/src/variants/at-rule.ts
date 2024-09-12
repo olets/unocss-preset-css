@@ -9,8 +9,6 @@ import { toParent } from "../utilities/variants";
  * - for `layer` at-rules, see the `layer` variant
  * - at-rule cannot contain the characters `@`, `{`, or `[`
  * - underscores (`_`) are replaced with spaces (` `)
- *
- * @returns VariantObject
  */
 export const variantAtRule: VariantObject = {
   name: "at-rule",
