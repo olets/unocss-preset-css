@@ -1,14 +1,7 @@
 import type { Variant } from "@unocss/core";
-import { variantAppendedSelector } from "./appended-selector";
-import { variantArbitrarySelector } from "./arbitrary-selector";
-import { variantAtRule } from "./at-rule";
-import { variantLayer } from "./layer";
+import { variantsSelector } from "./selector";
+import { variantsAtRule } from "./at-rule";
 
 export function variants(): Variant[] {
-  return [
-    variantAppendedSelector,
-    variantArbitrarySelector,
-    variantAtRule,
-    variantLayer,
-  ];
+  return [...variantsSelector, ...variantsAtRule];
 }

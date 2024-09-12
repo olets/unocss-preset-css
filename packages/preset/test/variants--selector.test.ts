@@ -7,7 +7,7 @@ describe("preset-css", () => {
     presets: [presetCSS()],
   });
 
-  it("generates CSS for pseudoselectors", async () => {
+  it("appended selector variant generates CSS for pseudoselectors", async () => {
     const { css } = await uno.generate("<div class=':hover{color:red}'></div>");
 
     expect(css).toMatchInlineSnapshot(`
@@ -18,7 +18,7 @@ describe("preset-css", () => {
     `);
   });
 
-  it("generates CSS for pseudoelements", async () => {
+  it("appended selector variant generates CSS for pseudoelements", async () => {
     const { css } = await uno.generate(
       "<div class='::before{color:red}'></div>"
     );
@@ -31,7 +31,7 @@ describe("preset-css", () => {
     `);
   });
 
-  it("generates CSS for stacked pseudos", async () => {
+  it("appended selector variant generates CSS for stacked pseudos", async () => {
     const { css } = await uno.generate(
       "<div class=':hover::before{color:red}'></div>"
     );
@@ -40,6 +40,26 @@ describe("preset-css", () => {
       "/* layer: default */
       .\\:hover\\:\\:before\\{color\\:red\\}{
       :hover::before{color:red;}
+      }"
+    `);
+  });
+
+  it("arbitrary selector variant generates CSS for non-self-referential selectors", async () => {
+    const { css } = await uno.generate("<div class='[body]{color:red}'></div>");
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      body{color:red;}"
+    `);
+  });
+
+  it("arbitrary selector variant generates CSS for self-referential selectors", async () => {
+    const { css } = await uno.generate("<div class='[&+&]{color:red}'></div>");
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .\\[\\&\\+\\&\\]\\{color\\:red\\}{
+      &+&{color:red;}
       }"
     `);
   });

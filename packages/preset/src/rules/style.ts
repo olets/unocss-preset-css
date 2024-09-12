@@ -16,16 +16,16 @@ import type { Rule } from "@unocss/core";
  *   - For empty pseudoelements, use `{content}` or `{content:}`, or with other styles `{content.,other-styles:here}` or `{content:.,other-styles:here}`
  */
 
-export const style: Rule[] = [
-  [
-    /^\{(?<rawStyles>.+)\}$/,
-    (matchArray) => {
-      const rawStyles = matchArray?.groups?.rawStyles || "";
+const ruleStyle: Rule = [
+  /^\{(?<rawStyles>.+)\}$/,
+  (matchArray) => {
+    const rawStyles = matchArray?.groups?.rawStyles || "";
 
-      return toStyles(rawStyles);
-    },
-  ],
+    return toStyles(rawStyles);
+  },
 ];
+
+export const rulesStyle = [ruleStyle] satisfies Rule[];
 
 function toStyles(rawStyles: string): Record<string, string> {
   const ret: Record<string, string> = rawStyles

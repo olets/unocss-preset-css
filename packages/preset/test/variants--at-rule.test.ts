@@ -8,7 +8,22 @@ describe("preset-css", () => {
     presets: [presetCSS()],
   });
 
-  it("generates @layer CSS", async () => {
+  it("arbitrary block at-rule variant generates CSS", async () => {
+    const { css } = await uno.generate(
+      "<div class='@media(width<768px){color:red}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      @layer default{
+      @media(width<768px){
+      .\\@media\\(width\\<768px\\)\\{color\\:red\\}{color:red;}
+      }
+      }"
+    `);
+  });
+
+  it("layer block at-rule variant generates CSS", async () => {
     const { css } = await uno.generate(
       "<div class='@layer_mylayer{color:red}'></div>"
     );
@@ -21,7 +36,7 @@ describe("preset-css", () => {
     `);
   });
 
-  it("generates @layer CSS, preserving dashes in layer names", async () => {
+  it("layer block at-rule variant preserves dashes in layer name", async () => {
     const { css } = await uno.generate(
       "<div class='@layer_my-layer{color:red}'></div>"
     );
@@ -34,7 +49,7 @@ describe("preset-css", () => {
     `);
   });
 
-  it("generates @layer CSS, preserving underscores in layer names", async () => {
+  it("layer block at-rule variant preserves underscores in layer name", async () => {
     const { css } = await uno.generate(
       "<div class='@layer_my_layer{color:red}'></div>"
     );
