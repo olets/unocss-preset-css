@@ -1,11 +1,10 @@
 {
-  "name": "@olets/unocss-preset-css",
   "type": "module",
-  "version": "1.0.0-alpha.4",
-  "description": "The 'css-in-the-class-attribute' preset for UnoCSS",
+  "packageManager": "bun@1.1.25",
+  "private": true,
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/olets/unocss-preset-css/tree/main/packages/preset-mini#readme",
+  "homepage": "https://github.com/olets/unocss-preset-css",
   "repository": {
     "type": "git",
     "url": "https://github.com/olets/unocss-preset-css"
@@ -18,38 +17,10 @@
     "unocss",
     "unocss-preset"
   ],
-  "sideEffects": false,
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "default": "./dist/index.mjs"
-    }
-  },
-  "main": "dist/index.mjs",
-  "module": "dist/index.mjs",
-  "types": "dist/index.d.ts",
-  "files": [
-    "*.css",
-    "*.d.ts",
-    "dist"
-  ],
   "scripts": {
-    "build": "unbuild",
-    "stub": "unbuild --stub",
-    "test": "vitest"
+    "preset": "bun run --filter @olets/unocss-preset-css"
   },
-  "devDependencies": {
-    "@types/bun": "latest",
-    "@unocss/preset-attributify": "^0.62.3",
-    "@unocss/preset-mini": "^0.62.3",
-    "unbuild": "^2.0.0",
-    "vitest": "^2.0.5"
-  },
-  "peerDependencies": {
-    "typescript": "^5.0.0"
-  },
-  "dependencies": {
-    "@unocss/core": "^0.62.3",
-    "@unocss/rule-utils": "^0.62.3"
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
