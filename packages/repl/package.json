@@ -1,7 +1,8 @@
 {
+  "name": "@olets/unocss-preset-css-repl",
   "type": "module",
-  "packageManager": "bun@1.1.25",
   "private": true,
+  "description": "REPL for the 'css-in-the-class-attribute' preset for UnoCSS",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/olets/unocss-preset-css",
@@ -12,16 +13,16 @@
   "bugs": {
     "url": "https://github.com/olets/unocss-preset-css/issues"
   },
-  "keywords": [
-    "css",
-    "unocss",
-    "unocss-preset"
-  ],
-  "scripts": {
-    "repl": "bun run --filter @olets/unocss-preset-css-repl",
-    "preset": "bun run --filter @olets/unocss-preset-css"
+  "devDependencies": {
+    "@olets/unocss-preset-css": "workspace:*",
+    "@types/bun": "latest",
+    "unocss": "^0.62.3",
+    "vite": "^5.4.4"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "dev": "vite --open __unocss#/repl"
+  }
 }
