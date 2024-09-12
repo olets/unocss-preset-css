@@ -18,8 +18,9 @@
     "unocss-preset"
   ],
   "scripts": {
-    "repl": "bun run --filter @olets/unocss-preset-css-repl",
-    "preset": "bun run --filter @olets/unocss-preset-css"
+    "docs": "bun run --filter @olets/unocss-preset-css-docs",
+    "preset": "bun run --filter @olets/unocss-preset-css",
+    "repl": "bun run --filter @olets/unocss-preset-css-repl"
   },
   "workspaces": [
     "packages/*"
