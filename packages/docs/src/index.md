@@ -1,25 +1,9 @@
 ---
-# https://vitepress.dev/reference/default-theme-home-page
-layout: home
-
-hero:
-  name: "@olets/unocss-preset-css"
-  text: "The 'css-in-the-class-attribute' preset for UnoCSS"
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+titleTemplate: :title # see also VitePress config
 ---
 
+# unocss-preset-css ![GitHub release (latest by date)](https://img.shields.io/github/v/release/olets/unocss-preset-css) ![GitHub commits since latest release](https://img.shields.io/github/commits-since/olets/unocss-preset-css/latest)
+
+<!-- TODO ![unocss-preset-css splash card](/unocss-preset-css-card.png) -->
+
+**unocss-preset-css** is <span class="{color:red}">red</span>
