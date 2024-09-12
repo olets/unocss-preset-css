@@ -25,6 +25,9 @@
       "default": "./dist/index.mjs"
     }
   },
+  "imports": {
+    "#*": "./src/*"
+  },
   "types": "dist/index.d.ts",
   "files": [
     "dist"

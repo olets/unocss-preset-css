@@ -1,5 +1,5 @@
 import type { VariantObject } from "@unocss/core";
-import { toParent } from "../utilities/variants";
+import { toParent } from "#utilities/variants.ts";
 
 /**
  * at-rules

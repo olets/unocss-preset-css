@@ -1,6 +1,6 @@
 import { createGenerator } from "@unocss/core";
-import presetCSS from "../src";
 import { describe, expect, it } from "vitest";
+import presetCSS from "#index.ts";
 
 describe("preset-css", () => {
   const uno = createGenerator({

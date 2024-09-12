@@ -1,5 +1,5 @@
 import type { VariantHandler, VariantObject } from "@unocss/core";
-import { toParent } from "../utilities/variants";
+import { toParent } from "#utilities/variants.ts";
 
 /**
  * Modify the selector:
