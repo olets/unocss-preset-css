@@ -46,14 +46,14 @@ export default defineConfig({
       {
         rel: "mask-icon",
         href: "/safari-pinned-tab.svg",
-        color: "#f05033",
+        color: "#444444",
       },
     ],
     [
       "meta",
       {
         name: "msapplication-TileColor",
-        content: "#f5f4ed",
+        content: "#444444",
       },
     ],
     [
@@ -77,7 +77,7 @@ export default defineConfig({
       "meta",
       {
         property: "og:url",
-        // TODO content: "",
+        content: "https://unocss-preset-css.olets.dev/",
       },
     ],
     ["meta", { property: "og:site_name", content: "@olets/unocss-preset-css" }],
@@ -86,7 +86,8 @@ export default defineConfig({
       "meta",
       {
         property: "og:image",
-        // TODO content: "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
+        content:
+          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
       },
     ],
     ["meta", { property: "og:image:width", content: "1200" }],
@@ -104,7 +105,8 @@ export default defineConfig({
       "meta",
       {
         name: "twitter:image",
-        // TODO content: "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
+        content:
+          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
       },
     ],
 
@@ -180,7 +182,7 @@ export default defineConfig({
         "https://github.com/olets/unocss-preset-css/edit/main/docs/:path",
     },
 
-    //TODO logo: "/images/unocss-preset-css-logo.png",
+    logo: "/assets/images/unocss-preset-css-logo.png",
 
     nav: [
       {
