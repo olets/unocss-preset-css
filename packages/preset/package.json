@@ -33,7 +33,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "unbuild",
+    "build": "bun run check && unbuild",
+    "check": "bunx tsc",
     "stub": "unbuild --stub",
     "test": "vitest"
   },
