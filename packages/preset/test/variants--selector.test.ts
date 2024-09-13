@@ -13,7 +13,7 @@ describe("preset-css", () => {
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */
       .\\:hover\\{color\\:red\\}{
-      :hover{color:red;}
+      &:hover{color:red;}
       }"
     `);
   });
@@ -26,7 +26,7 @@ describe("preset-css", () => {
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */
       .\\:\\:before\\{color\\:red\\}{
-      ::before{color:red;}
+      &::before{color:red;}
       }"
     `);
   });
@@ -39,7 +39,7 @@ describe("preset-css", () => {
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */
       .\\:hover\\:\\:before\\{color\\:red\\}{
-      :hover::before{color:red;}
+      &:hover::before{color:red;}
       }"
     `);
   });

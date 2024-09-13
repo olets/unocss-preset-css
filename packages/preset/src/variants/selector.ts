@@ -29,7 +29,7 @@ const variantAppendedSelector: VariantObject = {
         next({
           ...input,
           parent: toParent(input.selector, input.parent),
-          selector,
+          selector: `&${selector}`,
         }),
     };
   },
