@@ -3,7 +3,7 @@ import markdownItFootnote from "markdown-it-footnote";
 import UnoCSS from "unocss/vite";
 
 const description = "The 'css-in-the-class-attribute' preset for UnoCSS";
-const title = "@olets/unocss-preset-css";
+const title = "unocss-preset-css";
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
