@@ -16,6 +16,28 @@ describe("preset-css", () => {
     `);
   });
 
+  it("replaces underscores values with spaces", async () => {
+    const { css } = await uno.generate(
+      "<div class='{padding:10px_20px}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .\\{padding\\:10px_20px\\}{padding:10px 20px;}"
+    `);
+  });
+
+  it("preserves escaped underscores", async () => {
+    const { css } = await uno.generate(
+      '<div class="{background-image:url(image\\_1.avif)}">'
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      .\\{background-image\\:url\\(image\\\\_1\\.avif\\)\\}{background-image:url(image\\_1.avif);}"
+    `);
+  });
+
   it("delimits CSS-like class names on '.,'", async () => {
     const { css } = await uno.generate(
       "<div class='{color:red.,font-weight:bold}'></div>"
@@ -33,17 +55,6 @@ describe("preset-css", () => {
     expect(css).toMatchInlineSnapshot(`
       "/* layer: default */
       .\\{content\\:hw\\}{content:"hw";}"
-    `);
-  });
-
-  it("replaces underscores in 'content' values with spaces", async () => {
-    const { css } = await uno.generate(
-      "<div class='{content:hello_world}'></div>"
-    );
-
-    expect(css).toMatchInlineSnapshot(`
-      "/* layer: default */
-      .\\{content\\:hello_world\\}{content:"hello world";}"
     `);
   });
 

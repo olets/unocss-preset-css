@@ -33,7 +33,7 @@ function toStyles(rawStyles: string): Record<string, string> {
     .reduce((styles, style) => {
       const [property, rawValue = ""] = style.split(":");
 
-      let value = rawValue.replaceAll("_", " ");
+      let value = rawValue.replaceAll(/(?<!\\)_/g, " ");
 
       if (property === "content") {
         value = `"${value}"`;
