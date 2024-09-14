@@ -1,5 +1,6 @@
 import type { Variant, VariantObject } from "@unocss/core";
-import { toParent } from "#utilities/variants.ts";
+import { toParent } from "#utilities/to-parent.ts";
+import { underscoreToSpace } from "#utilities/underscore-to-space.js";
 
 /**
  * Append to the selector,
@@ -29,7 +30,7 @@ const variantAppendedSelector: VariantObject = {
         next({
           ...input,
           parent: toParent(input.selector, input.parent),
-          selector: `&${selector}`,
+          selector: `&${underscoreToSpace(selector)}`,
         }),
     };
   },
@@ -66,7 +67,7 @@ const variantArbitrarySelector: VariantObject = {
           next({
             ...input,
             parent: toParent(input.selector, input.parent),
-            selector,
+            selector: underscoreToSpace(selector),
           }),
       };
     }
@@ -76,7 +77,7 @@ const variantArbitrarySelector: VariantObject = {
       handle: (input, next) =>
         next({
           ...input,
-          selector,
+          selector: underscoreToSpace(selector),
         }),
     };
   },

@@ -1,4 +1,5 @@
 import type { Rule } from "@unocss/core";
+import { underscoreToSpace } from "#utilities/underscore-to-space.ts";
 
 /**
  *
@@ -33,7 +34,7 @@ function toStyles(rawStyles: string): Record<string, string> {
     .reduce((styles, style) => {
       const [property, rawValue = ""] = style.split(":");
 
-      let value = rawValue.replaceAll(/(?<!\\)_/g, " ");
+      let value = underscoreToSpace(rawValue);
 
       if (property === "content") {
         value = `"${value}"`;

@@ -23,6 +23,36 @@ describe("preset-css", () => {
     `);
   });
 
+  it("arbitrary block at-rule variant replaces unescaped underscores with spaces", async () => {
+    const { css } = await uno.generate(
+      "<div class='@media_(width<768px){color:red}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      @layer default{
+      @media (width<768px){
+      .\\@media_\\(width\\<768px\\)\\{color\\:red\\}{color:red;}
+      }
+      }"
+    `);
+  });
+
+  it("arbitrary block at-rule variant preserves escaped underscores", async () => {
+    const { css } = await uno.generate(
+      "<div class='@imaginary\\_underscored\\_at-rule{color:red}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: default */
+      @layer default{
+      @imaginary\\_underscored\\_at-rule{
+      .\\@imaginary\\\\_underscored\\\\_at-rule\\{color\\:red\\}{color:red;}
+      }
+      }"
+    `);
+  });
+
   it("layer block at-rule variant generates CSS", async () => {
     const { css } = await uno.generate(
       "<div class='@layer_mylayer{color:red}'></div>"

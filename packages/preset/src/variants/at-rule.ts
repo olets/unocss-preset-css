@@ -1,5 +1,6 @@
 import type { Variant, VariantObject } from "@unocss/core";
-import { toParent } from "#utilities/variants.ts";
+import { toParent } from "#utilities/to-parent.ts";
+import { underscoreToSpace } from "#utilities/underscore-to-space.js";
 
 /**
  * Arbitrary block at-rules
@@ -31,7 +32,7 @@ const variantArbitraryBlockAtRule: VariantObject = {
       handle: (input, next) => {
         return next({
           ...input,
-          parent: toParent(atRule.replaceAll("_", " "), input.parent),
+          parent: toParent(underscoreToSpace(atRule), input.parent),
         });
       },
     };
