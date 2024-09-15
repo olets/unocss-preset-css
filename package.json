@@ -1,10 +1,5 @@
 {
-  "type": "module",
-  "packageManager": "bun@1.1.25",
-  "private": true,
   "author": "Henry Bley-Vroman <olets@olets.dev>",
-  "license": "SEE LICENSE IN LICENSE",
-  "homepage": "https://github.com/olets/unocss-preset-css",
   "repository": {
     "type": "git",
     "url": "https://github.com/olets/unocss-preset-css"
@@ -12,16 +7,21 @@
   "bugs": {
     "url": "https://github.com/olets/unocss-preset-css/issues"
   },
+  "homepage": "https://github.com/olets/unocss-preset-css",
   "keywords": [
     "css",
     "unocss",
     "unocss-preset"
   ],
+  "license": "SEE LICENSE IN LICENSE",
+  "packageManager": "bun@1.1.25",
+  "private": true,
   "scripts": {
     "docs": "bun run --filter @olets/unocss-preset-css-docs",
     "preset": "bun run --filter @olets/unocss-preset-css",
     "repl": "bun run --filter @olets/unocss-preset-css-repl"
   },
+  "type": "module",
   "workspaces": [
     "packages/*"
   ]

@@ -1,6 +1,7 @@
 {
   "name": "@olets/unocss-preset-css-repl",
   "type": "module",
+  "version": "1.0.0-beta.1-repl.1.0.0",
   "private": true,
   "description": "REPL for the 'css-in-the-class-attribute' preset for UnoCSS",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
