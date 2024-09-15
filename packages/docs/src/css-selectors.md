@@ -5,7 +5,7 @@ In vanilla CSS, it's not possible to select a _different_ element via the `class
 Bring in some additional tooling —for example Tailwind CSS, Windi CSS, or in this case UnoCSS— and you can do any of that.
 
 :::tip
-As always with `unocss-preset-css`, the ruleset can have more than one rule (docs: [CSS rulesets > Multiple CSS declarations](./css-rulesets.md#multiple-css-declarations)) and/or block at-rules (docs: [CSS block at-rules](./css-block-at-rules.md)) and/or customized selectors. For the sake of legibility, the examples on this page use single-rule rulesets with no block at-rules.
+As always with `unocss-preset-css`, the ruleset can have more than one rule (docs: [CSS rulesets > Multiple CSS declarations](./css-rulesets.md#multiple-css-declarations)) and/or block at-rules (docs: [CSS block at-rules](./css-at-rules.md)) and/or customized selectors. For the sake of legibility, the examples on this page use single-rule rulesets with no block at-rules.
 :::
 
 ## Pseudoselectors

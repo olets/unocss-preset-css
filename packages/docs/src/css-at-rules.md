@@ -3,7 +3,7 @@
 In vanilla CSS, it's not possible to write at-rules in an element's attributes. Bring in some additional tooling —for example Tailwind CSS, Windi CSS, or in this case UnoCSS— and you can.
 
 :::tip
-As always with `unocss-preset-css`, the ruleset can have more than one rule (docs: [CSS rulesets > Multiple CSS declarations](./css-rulesets.md#multiple-css-declarations)) and/or block at-rules (docs: [CSS block at-rules](./css-block-at-rules.md)) and/or customized selectors. For the sake of legibility, the examples on this page use single-rule rulesets with no custom selectors.
+As always with `unocss-preset-css`, the ruleset can have more than one rule (docs: [CSS rulesets > Multiple CSS declarations](./css-rulesets.md#multiple-css-declarations)) and/or block at-rules (docs: [CSS block at-rules](./css-at-rules.md)) and/or customized selectors. For the sake of legibility, the examples on this page use single-rule rulesets with no custom selectors.
 :::
 
 ## Layers
@@ -117,6 +117,7 @@ To put CSS rules in another block at-rule, write your CSS ruleset in the class a
 `class="<at-rule>{<property>:<value>}"`
 
 :::tip
+Like everywhere else with `unocss-preset-css` _except for layer block at-rules_, underscores in `<at-rule>` are replaced with spaces. To use a literal underscore, escape it with a backslash (`\`).
 Like everywhere else with `unocss-preset-css` _except for layer block at-rules_, underscores in `<at-rule>` are replaced with spaces. To use a literal underscore, escape it with a backslash (`\`).
 :::
 
