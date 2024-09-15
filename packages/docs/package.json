@@ -1,8 +1,8 @@
 {
   "name": "@olets/unocss-preset-css-docs",
   "type": "module",
-  "version": "1.0.0-beta.1-docs.1.0.0",
-  "description": "Documentation for the 'css-in-the-class-attribute' preset for UnoCSS",
+  "version": "1.0.0",
+  "description": "Documentation site for @olets/unocss-preset-css",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/olets/unocss-preset-css",

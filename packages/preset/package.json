@@ -1,8 +1,8 @@
 {
   "name": "@olets/unocss-preset-css",
   "type": "module",
-  "version": "1.0.0-beta.1",
-  "description": "The 'css-in-the-class-attribute' preset for UnoCSS",
+  "version": "1.0.0",
+  "description": "A front-end tool which unlocks writing something very close to vanilla CSS directly in the `class` attribute",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
   "homepage": "https://github.com/olets/unocss-preset-css",
