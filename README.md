@@ -12,7 +12,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
 ## Who is unocss-preset-css for?
 
 - Adventurous fans of writing CSS via a `class` DOM API interested in trying out patterns other than Tailwind's, in the search for the next evolutionary step.
-- People wondering what UnoCSS is all about. [^1]
+- People wondering what UnoCSS is all about.
 - People who like or are at least intrigued by the idea of writing CSS via a `class` attribute DOM API but are turned off by Tailwind's (and then Windi's) inconsistent and overloaded renaming of CSS properties.
 - People who don't have to try Tailwind to know that they hate it but wouldn't mind something new to casually bad mouth, probably.
 
