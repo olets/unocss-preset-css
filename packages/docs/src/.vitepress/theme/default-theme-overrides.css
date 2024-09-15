@@ -164,6 +164,22 @@ body.has-scroll-bar.VPSidebarItem.is-link:focus-visible {
   margin-bottom: 1px;
 }
 
+.VPDocOutlineItem {
+  margin-top: 0.5rem;
+
+  li {
+    .outline-link {
+      line-height: 1.2rem;
+      overflow: visible;
+      text-wrap: pretty;
+    }
+
+    &+li {
+      margin-top: 1rem;
+    }
+  }
+}
+
 /**
 * Customize default theme styling by overriding CSS variables:
 * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css

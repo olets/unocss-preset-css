@@ -204,19 +204,25 @@ export default defineConfig({
     sidebar: [
       { text: "Overview", link: "/" },
       { text: "Installation", link: "/installation" },
-      { text: "Usage", link: "/usage" },
       {
-        text: "Examples",
+        text: "Usage",
         items: [
           // TODO
-          // {
-          //   text: "…",
-          //   link: "/examples/…",
-          // },
+          {
+            text: "CSS rulesets",
+            link: "/css-rulesets",
+          },
+          {
+            text: "CSS selectors",
+            link: "/css-selectors",
+          },
+          {
+            text: "CSS at-rules",
+            link: "/css-at-rules",
+          },
         ],
       },
       { text: "Contributing", link: "/contributing" },
-      { text: "Acknowledgments", link: "/acknowledgments" },
     ],
   },
   vite: {
