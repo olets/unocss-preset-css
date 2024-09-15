@@ -32,7 +32,7 @@ Or run the REPL locally: clone or download this repo, and run the `repl` package
 
 ## Changelog
 
-See the [CHANGELOG](https://github.com/olets/unocss-preset-css/blob/main/CHANGELOG.md) file.
+You're probably looking for [the preset's CHANGELOG file](./packages/preset/CHANGELOG.md).
 
 ## Contributing
 

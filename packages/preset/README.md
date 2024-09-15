@@ -32,7 +32,7 @@ Or run the REPL locally: clone or download the unocss-preset-css monorepo, and r
 
 ## Changelog
 
-See the [CHANGELOG](https://github.com/olets/unocss-preset-css/blob/main/CHANGELOG.md) file.
+See the [CHANGELOG](CHANGELOG.md) file.
 
 ## Contributing
 
