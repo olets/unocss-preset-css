@@ -87,7 +87,7 @@ export default defineConfig({
       {
         property: "og:image",
         content:
-          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
+          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.jpg",
       },
     ],
     ["meta", { property: "og:image:width", content: "1200" }],
@@ -106,7 +106,7 @@ export default defineConfig({
       {
         name: "twitter:image",
         content:
-          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.png",
+          "https://unocss-preset-css.olets.dev/unocss-preset-css-card.jpg",
       },
     ],
 
