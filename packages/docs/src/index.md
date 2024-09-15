@@ -12,7 +12,7 @@ titleTemplate: :title # see also VitePress config
 
 &nbsp;
 
-**unocss-preset-css** is a front-end tool which unlocks writing something very close to vanilla CSS directly in the `class` attribute. Style any element from any other element, styling `::before` and `::after` directly on their originating element, and using CSS at-rules without breaking to a `<style>` tag, all without learning new syntax.
+**unocss-preset-css** is a front-end tool which unlocks writing something very close to vanilla CSS directly in the `class` attribute. Style any element from any other element, style `::before` and `::after` from their originating element's markup, and use CSS at-rules without breaking to a `<style>` tag, all without learning new syntax.
 
 It's like Tailwind CSS, or Windi CSS, or any other CSS DOM API, but with the minimum of tool-specific idioms.
 
