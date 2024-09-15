@@ -1,6 +1,6 @@
 import type { Variant, VariantObject } from "@unocss/core";
 import { toParent } from "#utilities/to-parent.ts";
-import { underscoreToSpace } from "#utilities/underscore-to-space.js";
+import { underscoreToSpace } from "#utilities/underscore-to-space.ts";
 
 /**
  * Append to the selector,
