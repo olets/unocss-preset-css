@@ -37,14 +37,6 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     
     e.g. `{color:red}`
 
-- Multiple declarations:
-
-    ```
-    {<property>:<value>.,<property>:<value>}
-    ```
-    
-    e.g. `{color:red.,font-weight:bold}`
-
 - Pseudoelement on the originating element:
 
     ```
@@ -85,9 +77,19 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     
     e.g. `@media(width<768px){color:red}`
 
-- You can use the "multiple declarations" pattern anywhere you can use the single declaration pattern.
-- You can combine a `@layer` block at-rule and another block at-rule.
-- You can combine a `@layer` block at-rule and/or another block at-rule with an arbitrary selector.
+- Multiple declarations: delimit with `.,` (sideways `;`. UnoCSS doesn't play nice with semicolons in class names)
+
+    ```
+    {<property>:<value>.,<property>:<value>}
+    ```
+    
+    e.g. `{color:red.,font-weight:bold}`
+
+- You can use the "multiple declarations" pattern anywhere you can use the "single declaration" pattern in a single class name.
+
+- You can combine a `@layer` block at-rule and another block at-rule in a single class name.
+
+- You can combine a `@layer` block at-rule and/or another block at-rule with an arbitrary selector in a single class name.
 
 ## Why write "atomic" / "primitive" / "utility" classes at all?
 
