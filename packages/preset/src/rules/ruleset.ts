@@ -17,7 +17,7 @@ import { underscoreToSpace } from "#utilities/underscore-to-space.ts";
  *   - For empty pseudoelements, use `{content}` or `{content:}`, or with other styles `{content.,other-styles:here}` or `{content:.,other-styles:here}`
  */
 
-const ruleStyle: Rule = [
+const ruleRuleset: Rule = [
   /^\{(?<rawStyles>.+)\}$/,
   (matchArray) => {
     const rawStyles = matchArray?.groups?.rawStyles || "";
@@ -26,7 +26,7 @@ const ruleStyle: Rule = [
   },
 ];
 
-export const rulesStyle = [ruleStyle] satisfies Rule[];
+export const rulesStyle = [ruleRuleset] satisfies Rule[];
 
 function toStyles(rawStyles: string): Record<string, string> {
   const ret: Record<string, string> = rawStyles

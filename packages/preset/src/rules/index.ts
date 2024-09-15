@@ -1,2 +1,2 @@
-export * from "./style";
+export * from "./ruleset";
 export * from "./default";
