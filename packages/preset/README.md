@@ -22,6 +22,12 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
 
 📖 <https://unocss-preset-css.olets.dev>
 
+## Demo
+
+👀 <https://stackblitz.com/edit/unocss-preset-css-repl>
+
+Or run the REPL locally: clone or download the unocss-preset-css monorepo, and run the `repl` package's `dev` script.
+
 &nbsp;
 
 ## Changelog

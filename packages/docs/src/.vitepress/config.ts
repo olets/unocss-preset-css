@@ -222,6 +222,7 @@ export default defineConfig({
           },
         ],
       },
+      { text: "Demo", link: "/demo" },
       { text: "Contributing", link: "/contributing" },
     ],
   },
