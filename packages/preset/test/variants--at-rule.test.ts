@@ -4,6 +4,10 @@ import presetCSS from "#index.ts";
 
 describe("preset-css", () => {
   const uno = createGenerator({
+    layers: {
+      other: 2,
+      stuff: 1,
+    },
     outputToCssLayers: true,
     presets: [presetCSS()],
   });
@@ -88,6 +92,38 @@ describe("preset-css", () => {
       "/* layer: my_layer */
       @layer my_layer{
       .\\@layer_my_layer\\{color\\:red\\}{color:red;}
+      }"
+    `);
+  });
+
+  it("can combine a layer block at-rule variant and an arbitrary block at-rule variant", async () => {
+    const { css } = await uno.generate(
+      "<div class='@layer_safari-14@supports(aspect-ratio:1_/_1){aspect-ratio:1_/_1}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: safari-14 */
+      @layer safari-14{
+      @supports(aspect-ratio:1 / 1){
+      .\\@layer_safari-14\\@supports\\(aspect-ratio\\:1_\\/_1\\)\\{aspect-ratio\\:1_\\/_1\\}{aspect-ratio:1 / 1;}
+      }
+      }"
+    `);
+  });
+
+  it.skip("possible future enhancement, limited by UnoCSS multi-parent capabilities: can stack multiple at-rule blocks", async () => {
+    const { css } = await uno.generate(
+      "<div class='@layer_safari-14@supports(aspect-ratio:1_/_1)@media(width>=768px){aspect-ratio:1_/_1}'></div>"
+    );
+
+    expect(css).toMatchInlineSnapshot(`
+      "/* layer: safari-14 */
+      @layer safari-14{
+      @supports(aspect-ratio:1 / 1){
+        @media(width>=768px){
+      .\\@layer_safari-14\\@supports\\(aspect-ratio\\:1_\\/_1\\)\\@media\\(width\\>\\=768px\\)\\{aspect-ratio\\:1_\\/_1\\}{aspect-ratio:1 / 1;}
+      }
+      }
       }"
     `);
   });
