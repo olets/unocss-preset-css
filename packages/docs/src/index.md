@@ -35,7 +35,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     {<property>:<value>}
     ```
     
-    e.g. `{color:red}`
+    e.g. `class="{color:red} …"`
 
 - Pseudoelement on the originating element:
 
@@ -43,7 +43,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     <pseudoelement>{<property>:<value>}
     ```
     
-    e.g. `::before{color:red}`
+    e.g. `class="::before{color:red} …"`
 
 - Pseudoselector on the originating element:
 
@@ -51,7 +51,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     <pseudoselector>{<property>:<value>}
     ```
     
-    e.g. `:focus{color:red}`
+    e.g. `class=":focus{color:red} …"`
 
 - Arbitrary selector:
 
@@ -59,7 +59,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     [<selector>]{<property>:<value>}
     ```
     
-    e.g. `[&+&]{color:red}`
+    e.g. `class="[&+&]{color:red} …"`
 
 - `@layer` block at-rule:
 
@@ -67,7 +67,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     @layer_<name>{<property>:<value>}
     ```
     
-    e.g. `@layer_stuff{color:red}`
+    e.g. `class="@layer_stuff{color:red} …"`
 
 - Other block at-rules:
 
@@ -75,7 +75,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     <at-rule>{<property>:<value>}
     ```
     
-    e.g. `@media(width<768px){color:red}`
+    e.g. `class="@media(width<768px){color:red} …"`
 
 - Multiple declarations: delimit with `.,` (sideways `;`. UnoCSS doesn't play nice with semicolons in class names)
 
@@ -83,7 +83,7 @@ Want `{ line-height: 2 }`? That's `class="{line-height:2}"`, not `class="leading
     {<property>:<value>.,<property>:<value>}
     ```
     
-    e.g. `{color:red.,font-weight:bold}`
+    e.g. `class="{color:red.,font-weight:bold} …"`
 
 - You can use the "multiple declarations" pattern anywhere you can use the "single declaration" pattern in a single class name.
 
