@@ -169,10 +169,20 @@ To combine a layer block at-rule and an arbitrary block at-rule, string the clas
 
 `@layer_<layer name><at-rule>{<property>:<value>}` or `<at-rule>@layer_<layer name>{<property>:<value>}`.
 
+Here's an example of supporting aspect-ratio in Safari 13 and 14 (read [
+Adding Safari 14 Support To Tailwind's Aspect Ratio](https://www.olets.dev/posts/adding-safari-14-support-to-tailwinds-aspect-ratio/) for more info) with inline `class` CSS.
+
 **Input**
 
 ```html
-<div class="{aspect-ratio:1_/_1} {border:1px_solid_red} {width:4rem} @layer_safari-14@supports_not_(aspect-ratio:1_/_1)[&::before]{content:.,float:left.,padding-top:calc(100%)} @layer_safari-14@supports_not_(aspect-ratio:1_/_1)[&::after]{clear:left.,content.,display:block}"></div>
+<div
+  class="
+    {aspect-ratio:1_/_1}
+    {border:1px_solid_red}
+    {width:4rem}
+    @layer_safari-14@supports_not_(aspect-ratio:1_/_1)[&::before]{content:.,float:left.,padding-top:calc(100%)}
+    @layer_safari-14@supports_not_(aspect-ratio:1_/_1)[&::after]{clear:left.,content.,display:block}
+  "></div>
 ```
 
 **Output**
