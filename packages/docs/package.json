@@ -2,6 +2,7 @@
   "name": "@olets/unocss-preset-css-docs",
   "type": "module",
   "version": "1.0.0",
+  "private": true,
   "description": "Documentation site for @olets/unocss-preset-css",
   "author": "Henry Bley-Vroman <olets@olets.dev>",
   "license": "SEE LICENSE IN LICENSE",
