@@ -229,7 +229,7 @@ You might be able to use a wrapping element.
   </div>
 </div>
 
-<div class="{display:none} @supports_not(-webkit-hyphens:none){display:block}">
+<div class="{display:none} @supports_not_(-webkit-hyphens:none){display:block}">
   <div class="@media(width<768px){color:red}">
     Red on windows narrower than 768px. Not Safari.
   </div>
