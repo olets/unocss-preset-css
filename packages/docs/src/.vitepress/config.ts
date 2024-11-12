@@ -179,7 +179,7 @@ export default defineConfig({
 
     editLink: {
       pattern:
-        "https://github.com/olets/unocss-preset-css/edit/main/docs/:path",
+        "https://github.com/olets/unocss-preset-css/edit/main/packages/docs/src/:path",
     },
 
     logo: "/assets/images/unocss-preset-css-logo.png",
