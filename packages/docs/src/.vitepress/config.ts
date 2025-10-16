@@ -123,6 +123,14 @@ export default defineConfig({
     [
       "script",
       {
+        src: "https://loose-saluki.pikapod.net/script.js",
+        "data-website-id": "e99e7b56-cac1-4450-9ce6-4e1fbc4b1478",
+        defer: "true",
+      },
+    ],
+    [
+      "script",
+      {
         src: "/js/analytics.js",
       },
     ],
